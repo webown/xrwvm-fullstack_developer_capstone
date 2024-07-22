@@ -3,8 +3,8 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
-from .views import logout_request
-from .views import registration
+#from .views import logout_request
+#from .views import registration
 
 app_name = 'djangoapp'
 urlpatterns = [
@@ -16,7 +16,7 @@ urlpatterns = [
     path(route='register', view=views.registration, name='registration'),
     
     
-    path(route='get_cars', view=views.get_cars, name ='getcars'),
+
     
 
     # paths
@@ -26,5 +26,6 @@ urlpatterns = [
     path(route='reviews/dealer/<int:dealer_id>', view=views.get_dealer_reviews, name='dealer_details'),
     path(route='add_review', view=views.add_review, name='add_review'),
     
+    path(route='get_cars', view=views.get_cars, name ='getcars'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
